@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <ul>
+                <li><a href="/dashboard">Home</a></li>
+                <li><a href="/dashboard/add">New Restaurant</a></li>
+                <li><a href="/dashboard/reserve">Make Reservation</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+            <h1>Reserve</h1>
+            <div id="main">
+                <h2>{{restaurant.name}}</h2>
+                <form action="/dashboard/reserve/{{restaurant.id}}/complete" method="POST">
+                    {% csrf_token %}
+                    <label for="guests">Number of Guests:</label>
+                    <input type="text" name="guests" id="guests">
+                    <input type="date" name="date">
+                    <input type="time">
+                    <input type="hidden" name='res_id' value="{{restaurant.id}}">
+                    <input type="submit" value="Make Reservation">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: 2px solid black;
+}
+#container{
+    margin: auto;
+    
+}
+h1{
+    text-align: center;
+}
+#main{
+    display: flex;
+    margin: 5% 10%;
+
+}
+.user-type{
+    width: 50%;
+
+}
+.user-type h2{
+    text-align: center;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <ul>
+                <li><a href="/dashboard">Home</a></li>
+                <li><a href="/dashboard/add">New Restaurant</a></li>
+                <li><a href="/dashboard/reserve">Make Reservation</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+        <h1>View Restaurant</h1>
+        <div id="main">
+            <div id="res">
+                <img src="" alt="Cover">
+                <p>{{restaurant.name}}</p>
+                <p>{{restaurant.address}} {{restaurant.city}} {{restaurant.zip_code}}</p>
+                <p>Capacity: {{restaurant.capacity}}</p>
+                <a href="/dashboard/reserve/{{restaurant.id}}">Reserve</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

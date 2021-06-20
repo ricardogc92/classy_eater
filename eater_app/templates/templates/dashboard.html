@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <ul>
+                <li><a href="/dashboard">Home</a></li>
+                <li><a href="/dashboard/add">New Restaurant</a></li>
+                <li><a href="/dashboard/reserve">Make Reservation</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+        <h1>{{user.first_name}}'s Dashboard</h1>
+        <div id="main">
+            <div class="user-type">
+                <h2>Reservations</h2>
+                {% for reservation in user.restaurant_reservations.all %}
+                <ul>
+                    <li><img src={{reservation.image}} alt="cover"> {{reservation.name}}</li>
+                </ul>
+                {% endfor %}
+            </div>
+            <div class="user-type">
+                <h2>Restaurants owned</h2>
+                {% for restaurant in user.restaurants_owned.all %}
+                <ul>
+                    <li><img src={{restaurant.image}} alt="cover"> {{restaurant.name}}</li>
+                </ul> 
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
