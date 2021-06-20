@@ -55,11 +55,11 @@ def reservation(request, res_id):
     return render(request,'reservation.html', context)
 
 def complete(request, res_id):
-    if request.session=='POST':
+    if request.method=='POST':
         restaurant=Restaurant.objects.get(id=res_id)
         user=User.objects.get(id=request.session['user_id'])
 
-        """errors=Reservation.objects.validator(request.POST)
+        errors=Reservation.objects.validator(request.POST)
         if errors:
             for value in errors.values():
                 messages.error(request, value)
@@ -67,9 +67,11 @@ def complete(request, res_id):
         Reservation.objects.create(
             user=user,
             restaurant=restaurant,
-            guests=request.POST['guests']
-        )"""
-        user.restaurant_reservations.add(restaurant)
+            guests=request.POST['guests'],
+            date=request.POST['date'],
+            time=request.POST('time')
+        )
+        
     
     return redirect('/dashboard')
 

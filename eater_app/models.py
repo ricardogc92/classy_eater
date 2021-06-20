@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
-from login.models import User
+from login_app.models import User
 # Create your models here.
 
 class RestaurantManager(models.Manager):
@@ -43,6 +43,8 @@ class Reservation(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     restaurant=models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     guests=models.CharField(max_length=40)
+    date=models.DateField()
+    time=models.TimeField()
     created_on=models.DateTimeField(auto_now_add=True)
     updated_on=models.DateTimeField(auto_now=True)
     objects=ReservationManager()
