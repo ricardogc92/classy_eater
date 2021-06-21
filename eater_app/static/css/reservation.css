@@ -1,0 +1,15 @@
+*{
+    margin: 0px;
+    padding: 0.1px;
+
+}
+#header{
+    background:url('/static/images/reservation.jpg') no-repeat center;
+    background-size: cover;
+}
+
+
+h1{
+    text-align: center;
+    color: goldenrod;
+}

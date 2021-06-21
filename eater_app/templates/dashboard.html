@@ -11,21 +11,25 @@
 </head>
 <body>
     <div id="container">
-        <div id="nav">
-            <ul>
-                <li><a href="/dashboard">Home</a></li>
-                <li><a href="/dashboard/add">New Restaurant</a></li>
-                <li><a href="/dashboard/reserve">Make Reservation</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
+        <div id="header">
+            <div id="nav">
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/dashboard/add">New Restaurant</a></li>
+                    <li><a href="/dashboard/reserve">Make Reservation</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+            <h1>{{user.first_name}}'s Dashboard</h1>
         </div>
-        <h1>{{user.first_name}}'s Dashboard</h1>
+
         <div id="main">
             <div class="user-type">
                 <h2>Reservations</h2>
-                {% for reservation in user.restaurant_reservations.all %}
+                {% for reservation in reservations %}
                 <ul>
-                    <li><img src={{reservation.image}} alt="cover"> {{reservation.name}}</li>
+                    <li><img src={{reservation.restaurant.image}} alt="cover"> {{reservation.restaurant.name}}</li>
+                    <li>Reservation for {{reservation.guests}} on {{reservation.date}} at {{reservation.time}}</li>
                 </ul>
                 {% endfor %}
             </div>

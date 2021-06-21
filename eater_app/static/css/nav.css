@@ -3,5 +3,18 @@
     justify-content: space-around;
     padding: 0% 30%;
     margin: 5% 0%;
+    list-style: none;
+}
+#nav ul a{
+    color: goldenrod;
+    background-color: brown;
+    
+}
 
+
+html{
+    padding-top: 0px;
+}
+#header{
+    font-family: cursive;
 }

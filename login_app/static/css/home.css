@@ -1,20 +1,33 @@
 *{
     margin: 0px;
     padding: 0px;
+    
+}
+
+body{
+    background:url('/static/images/home.jpg') no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: fit-content;
 }
 #container{
-    width: 970px;
+
     margin: auto;
     padding: 50px;
-    background-color: teal;
-
+    
 }
+
+#container li{
+    color: darkred;
+}
+
 h1{
-    text-align: center;
+    text-align:left;
+    color: goldenrod;
 }
 #body{
-    display: flex;
-    justify-content: center;
     
     
 }
@@ -27,6 +40,6 @@ label{
     width: 300px;
     border: solid 2px black;
     margin: 20px 20px 0px 0px;
-    background-color: green;
+    background-color: gray;
     padding: 5px;
 }

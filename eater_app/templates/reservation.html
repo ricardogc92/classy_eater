@@ -7,18 +7,23 @@
     <title>Reservation</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reservation.css' %}">
 </head>
 <body>
     <div id="container">
-        <div id="nav">
-            <ul>
-                <li><a href="/dashboard">Home</a></li>
-                <li><a href="/dashboard/add">New Restaurant</a></li>
-                <li><a href="/dashboard/reserve">Make Reservation</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
+        <div id="header">
+            <div id="nav">
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/dashboard/add">New Restaurant</a></li>
+                    <li><a href="/dashboard/reserve">Make Reservation</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
             <h1>Reserve</h1>
-            <div id="main">
+        </div>
+        
+        <div id="main">
                 <h2>{{restaurant.name}}</h2>
                 <form action="/dashboard/reserve/{{restaurant.id}}/complete" method="POST">
                     {% csrf_token %}
@@ -30,7 +35,7 @@
                     <input type="submit" value="Make Reservation">
                 </form>
             </div>
-        </div>
+        
     </div>
 </body>
 </html>

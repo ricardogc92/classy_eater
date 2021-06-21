@@ -8,7 +8,7 @@ def dashboard(request):
         return redirect('/')
     context={
         'user':User.objects.get(id=request.session['user_id']),
-        #'reservations':Reservation.objects.filter(user=request.session['user_id']),
+        'reservations':Reservation.objects.filter(user=request.session['user_id']),
 
     }
     return render(request, 'dashboard.html', context)
@@ -69,7 +69,7 @@ def complete(request, res_id):
             restaurant=restaurant,
             guests=request.POST['guests'],
             date=request.POST['date'],
-            time=request.POST('time')
+            time=request.POST['time']
         )
         
     

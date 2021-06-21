@@ -31,7 +31,7 @@ class Restaurant(models.Model):
     city=models.CharField(max_length=255)
     zip_code=models.CharField(max_length=15)
     capacity=models.IntegerField()
-    image=models.ImageField()
+    image=models.ImageField(upload_to='images/')
     created_on=models.DateTimeField(auto_now_add=True)
     updated_on=models.DateTimeField(auto_now=True)
     owner=models.ForeignKey(User, related_name="restaurants_owned", on_delete=models.CASCADE)

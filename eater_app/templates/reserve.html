@@ -7,18 +7,22 @@
     <title>Make a Reservation</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reserve.css' %}">
 </head>
 <body>
     <div id="container">
-        <div id="nav">
-            <ul>
-                <li><a href="/dashboard">Home</a></li>
-                <li><a href="/dashboard/add">New Restaurant</a></li>
-                <li><a href="/dashboard/reserve">Make Reservation</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
+        <div id="header">
+            <div id="nav">
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/dashboard/add">New Restaurant</a></li>
+                    <li><a href="/dashboard/reserve">Make Reservation</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+            <h1>Make Reservation</h1>
         </div>
-        <h1>Make Reservation</h1>
+        
         <div id="main">
             <table class="table table-hover">
                 <tbody>
