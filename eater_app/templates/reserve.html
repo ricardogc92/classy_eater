@@ -27,8 +27,8 @@
                     {% for restaurant in restaurants %}
                     <div class="sec">
                         <div class="im"><img src="{{restaurant.image.url}}" alt="cover"></div>
-                        <p><a href="/dashboard/view/{{restaurant.id}}">{{restaurant.name}}</a></p>
-                        <p>Available | Reserve</p>
+                        <p><a class="bi" href="/dashboard/view/{{restaurant.id}}">{{restaurant.name}}</a></p>
+                        <p>Available | <a href="/dashboard/reserve/{{restaurant.id}}">Reserve</a></p>
                     </div>
                     {% endfor %}
         </div>

@@ -77,3 +77,12 @@ def complete(request, res_id):
     return redirect('/dashboard')
 
 
+def delete(request, res_id):
+    restaurant = Restaurant.objects.get(id=res_id)
+    restaurant.delete()
+    return redirect('/dashboard')
+
+def cancel(request, res_id):
+    reservation = Reservation.objects.get(id=res_id)
+    reservation.delete()
+    return redirect('/dashboard')

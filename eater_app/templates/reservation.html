@@ -28,12 +28,13 @@
                 <form action="/dashboard/reserve/{{restaurant.id}}/complete" method="POST">
                     {% csrf_token %}
                     <label for="guests">Number of Guests:</label>
-                    <input type="text" name="guests" id="guests">
+                    <input type="number" name="guests" id="guests" placeholder="0">
                     <input type="date" name="date">
                     <input type="time" name="time">
                     <input type="hidden" name='res_id' value="{{restaurant.id}}">
                     <input type="submit" value="Make Reservation">
                 </form>
+                <img src="{% static 'images/reservation2.jpg' %}" alt="Drinks">
             </div>
         
     </div>

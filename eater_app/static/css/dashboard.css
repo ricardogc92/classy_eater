@@ -55,10 +55,16 @@ h1{
 .user-type .im{
     height: 100px;
     width: 100px;
+    margin-right: 8px;
 
 }
 img{
     height: 100px;
     width: 100px;
     border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: goldenrod;
 }

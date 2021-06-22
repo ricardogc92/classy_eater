@@ -25,12 +25,15 @@
         
         <div id="main">
             <div id="res">
-                <img src="" alt="Cover">
-                <p>{{restaurant.name}}</p>
+                <h2>{{restaurant.name}}</h2>
+                <img src="{{restaurant.image.url}}" alt="Cover">
+                
                 <p>{{restaurant.address}} {{restaurant.city}} {{restaurant.zip_code}}</p>
                 <p>Capacity: {{restaurant.capacity}}</p>
                 <a href="/dashboard/reserve/{{restaurant.id}}">Reserve</a>
+                
             </div>
+            <img id="map" src="{% static 'images/map.png' %}" alt="map">
         </div>
     </div>
 </body>
