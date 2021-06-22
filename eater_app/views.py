@@ -76,7 +76,30 @@ def complete(request, res_id):
     
     return redirect('/dashboard')
 
+def edit(request,res_id):
+    context={
+        'restaurant':Restaurant.objects.get(id=res_id)
+    }
+    return render(request, 'edit.html',context)
 
+def update(request, res_id):
+    if request.method=='POST':
+        errors=Restaurant.objects.validator(request.POST)
+        if errors:
+            for value in errors.values():
+                messages.error(request, value)
+            return redirect(f'/dashboard/edit/{res_id}')
+        restaurant=Restaurant.objects.get(id=res_id)
+        restaurant.name=request.POST['name']
+        restaurant.category=request.POST['category']
+        restaurant.address=request.POST['address']
+        restaurant.city=request.POST['city']
+        restaurant.zip_code=request.POST['zip-code']
+        restaurant.capacity=request.POST['capacity']
+        restaurant.image=request.FILES['images']
+        restaurant.save()
+    return redirect('/dashboard')
+    
 def delete(request, res_id):
     restaurant = Restaurant.objects.get(id=res_id)
     restaurant.delete()

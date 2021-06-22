@@ -39,7 +39,7 @@
                 {% for restaurant in user.restaurants_owned.all %}
                 <div class="sec">
                     <div class="im"><img src="{{restaurant.image.url}}" alt="cover"></div>
-                    <p class="ownedp">{{restaurant.name}} | Edit | <a href="/dashboard/delete/{{restaurant.id}}">Delete</a></p>
+                    <p class="ownedp">{{restaurant.name}} | <a href="/dashboard/edit/{{restaurant.id}}">Edit</a> | <a href="/dashboard/delete/{{restaurant.id}}">Delete</a></p>
                 </div>
                     
                 {% endfor %}
