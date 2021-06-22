@@ -24,18 +24,13 @@
         </div>
         
         <div id="main">
-            <table class="table table-hover">
-                <tbody>
                     {% for restaurant in restaurants %}
-                    <tr>
-                    <td> <img src="{{restaurant.image}}" alt="cover"></td>
-                    <td><a href="/dashboard/view/{{restaurant.id}}">{{restaurant.name}}</a></td>
-                    <td>fewr</td>
-                    <td>@mdo</td>
-                    </tr>
+                    <div class="sec">
+                        <div class="im"><img src="{{restaurant.image.url}}" alt="cover"></div>
+                        <p><a href="/dashboard/view/{{restaurant.id}}">{{restaurant.name}}</a></p>
+                        <p>Available | Reserve</p>
+                    </div>
                     {% endfor %}
-                </tbody>
-            </table>
         </div>
     </div>
 </body>

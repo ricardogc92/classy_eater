@@ -8,6 +8,8 @@
 #nav ul a{
     color: goldenrod;
     background-color: brown;
+    border-radius: 3px;
+    padding: 2px 4px;
     
 }
 

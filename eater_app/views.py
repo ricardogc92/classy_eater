@@ -30,6 +30,7 @@ def create(request):
                 messages.error(request, value)
             return redirect('/dashboard/add')
         user=User.objects.get(id=request.session['user_id'])
+        print(request.FILES['images'])
         new_restaurant=Restaurant.objects.create(
             name=request.POST['name'],
             category=request.POST['category'],
@@ -37,7 +38,7 @@ def create(request):
             city=request.POST['city'],
             zip_code=request.POST['zip-code'],
             capacity=request.POST['capacity'],
-            image=request.POST['image'],
+            image=request.FILES['images'],
             owner=user
         )
     return redirect('/dashboard')

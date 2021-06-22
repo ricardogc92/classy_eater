@@ -23,12 +23,42 @@ h1{
 }
 .user-type{
     width: 50%;
+    margin: 40px;
+    
 }
 .user-type ul{
     list-style: none;
     margin: 20px 0px;
+
 }
 
 .user-type h2{
     text-align: center;
+    font-family:cursive;
+    font-size: 30px;
+}
+.sec{
+    height: 100px;
+    display: flex;
+    font-size: 17px;
+    align-items: center;
+    background-color: #512a1a;
+    margin: 20px 0px;
+    border-radius: 5px;
+    color: goldenrod;
+    
+}
+.ownedp{
+    margin-left: 20%;
+
+}
+.user-type .im{
+    height: 100px;
+    width: 100px;
+
+}
+img{
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
 }

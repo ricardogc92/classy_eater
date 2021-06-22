@@ -27,18 +27,21 @@
             <div class="user-type">
                 <h2>Reservations</h2>
                 {% for reservation in reservations %}
-                <ul>
-                    <li><img src={{reservation.restaurant.image}} alt="cover"> {{reservation.restaurant.name}}</li>
-                    <li>Reservation for {{reservation.guests}} on {{reservation.date}} at {{reservation.time}}</li>
-                </ul>
+                <div class="sec">
+                    <div class="im"><img src="{{restaurant.image.url}}" alt="cover"></div>
+                    <p>{{reservation.restaurant.name}} reservation for {{reservation.guests}} on {{reservation.date}} at {{reservation.time}} | Cancel</p>
+                </div>
+                    
                 {% endfor %}
             </div>
             <div class="user-type">
                 <h2>Restaurants owned</h2>
                 {% for restaurant in user.restaurants_owned.all %}
-                <ul>
-                    <li><img src={{restaurant.image}} alt="cover"> {{restaurant.name}}</li>
-                </ul> 
+                <div class="sec">
+                    <div class="im"><img src="{{restaurant.image.url}}" alt="cover"></div>
+                    <p class="ownedp">{{restaurant.name}} | Edit | Delete</p>
+                </div>
+                    
                 {% endfor %}
             </div>
         </div>

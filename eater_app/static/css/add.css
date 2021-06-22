@@ -14,3 +14,8 @@ h1{
     color: goldenrod;
 }
 
+#new_restaurant{
+    width: 60%;
+
+    margin:auto;
+}

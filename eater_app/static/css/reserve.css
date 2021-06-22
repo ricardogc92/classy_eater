@@ -8,9 +8,35 @@
     background-size: cover;
 }
 
+#main{
+    width: 35%;
+    margin: auto;
+}
 
 h1{
     text-align: center;
     color: goldenrod;
 }
 
+.sec{
+    height: 100px;
+    display: flex;
+    font-size: 17px;
+    align-items: center;
+    background-color: #512a1a;
+    margin: 20px 0px;
+    border-radius: 5px;
+    color: goldenrod;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+.im{
+    height: 100px;
+    width: 100px;
+
+}
+img{
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
